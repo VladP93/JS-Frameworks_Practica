@@ -11,7 +11,7 @@ const md_upload = multipart({ uploadDir: "./upload/articles" });
 
 //rutas de prueba
 router.post("/datos", ArticleController.datosCurso);
-router.get("/testContoller", ArticleController.test);
+router.get("/testController", ArticleController.test);
 
 //Rutas
 router.post("/save", ArticleController.save);
