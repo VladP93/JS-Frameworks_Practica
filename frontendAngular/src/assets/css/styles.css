@@ -11,6 +11,10 @@ body {
   -moz-osx-font-smoothing: antialiased;
 }
 
+small {
+  color: #f13e3e;
+}
+
 #header {
   height: 120px;
   width: 100%;
@@ -97,7 +101,7 @@ body {
 
 #menu a:hover,
 .active {
-  color: #f13e3e !important;
+  color: #4e4343 !important;
 }
 
 #slider {

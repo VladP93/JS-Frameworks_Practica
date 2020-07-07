@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,7 +29,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
     ErrorComponent,
     PeliculasComponent,
   ],
-  imports: [BrowserModule, routing],
+  imports: [BrowserModule, routing, FormsModule],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent],
 })
