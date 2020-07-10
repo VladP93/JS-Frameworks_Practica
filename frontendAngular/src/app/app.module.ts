@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,6 +19,9 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { MomentModule } from 'angular2-moment';
 import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
+import { NewArticleComponent } from './components/new-article/new-article.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,9 @@ import { ArticleComponent } from './components/article/article.component';
     PeliculasComponent,
     ArticlesComponent,
     ArticleComponent,
+    SearchComponent,
+    NewArticleComponent,
+    EditArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +48,7 @@ import { ArticleComponent } from './components/article/article.component';
     FormsModule,
     HttpClientModule,
     MomentModule,
+    AngularFileUploaderModule,
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent],

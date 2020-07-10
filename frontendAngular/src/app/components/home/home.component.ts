@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._articleServices.getArticles(true).subscribe((response) => {
       response.articles && (this.articles = response.articles);
-      console.log(this.articles);
     }),
       (error) => {
         console.log(error);

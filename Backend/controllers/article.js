@@ -40,7 +40,12 @@ const controller = {
         //Asignar valores
         article.title = params.title;
         article.content = params.content;
-        article.image = null;
+
+        if (params.image) {
+          article.image = params.image;
+        } else {
+          article.image = null;
+        }
 
         //Guardar
         article.save((err, articleStored) => {
@@ -105,7 +110,6 @@ const controller = {
   getArticle: (req, res) => {
     //Recoger el id de la URL
     const articleId = req.params.id;
-    console.log(articleId);
     //Comprobar que existe
     if (!articleId || articleId == null) {
       return res.status(404).send({
@@ -250,34 +254,40 @@ const controller = {
       });
     } else {
       //Subir
-      //Buscar articulo y asignar nombre de la imagen y actualizar
-      Article.findOneAndUpdate(
-        { _id: articleId },
-        { image: fileName },
-        { new: true },
-        (err, articleUpdated) => {
-          console.log(articleId);
 
-          if (err) {
-            return res.status(500).send({
-              status: "error",
-              err,
+      if (articleId) {
+        //Buscar articulo y asignar nombre de la imagen y actualizar
+        Article.findOneAndUpdate(
+          { _id: articleId },
+          { image: fileName },
+          { new: true },
+          (err, articleUpdated) => {
+            if (err) {
+              return res.status(500).send({
+                status: "error",
+                err,
+              });
+            }
+
+            if (!articleUpdated) {
+              return res.status(404).send({
+                status: "error",
+                message: "not Found",
+              });
+            }
+
+            return res.status(200).send({
+              status: "success",
+              articleUpdated,
             });
           }
-
-          if (!articleUpdated) {
-            return res.status(404).send({
-              status: "error",
-              message: "not Found",
-            });
-          }
-
-          return res.status(200).send({
-            status: "success",
-            articleUpdated,
-          });
-        }
-      );
+        );
+      } else {
+        return res.status(200).send({
+          status: "success",
+          image: fileName,
+        });
+      }
     }
   },
 
@@ -335,12 +345,9 @@ const controller = {
 module.exports = controller;
 
 function comprobarExt(ext) {
-  console.log(ext);
   if (ext != "png" && ext != "jpg" && ext != "jpeg" && ext != "gif") {
-    console.log("ret false");
     return true;
   } else {
-    console.log("ret true");
     return false;
   }
 }

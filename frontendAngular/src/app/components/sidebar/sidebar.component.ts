@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
+  public searchString: string;
 
-  constructor() { }
+  constructor(private _router: Router, private_route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  goSearch() {
+    this._router.navigate(['/buscar', this.searchString]);
   }
-
 }

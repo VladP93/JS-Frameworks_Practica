@@ -10,7 +10,7 @@ const multipart = require("connect-multiparty");
 const md_upload = multipart({ uploadDir: "./upload/articles" });
 
 //rutas de prueba
-router.post("/datos", ArticleController.datosCurso);
+router.get("/datosCurso", ArticleController.datosCurso);
 router.get("/testController", ArticleController.test);
 
 //Rutas
@@ -19,7 +19,7 @@ router.get("/articles/:last?", ArticleController.getArticles);
 router.get("/article/:id", ArticleController.getArticle);
 router.put("/article/:id", ArticleController.update);
 router.delete("/article/:id", ArticleController.delete);
-router.post("/uploadImage/:id", md_upload, ArticleController.upload);
+router.post("/uploadImage/:id?", md_upload, ArticleController.upload);
 router.get("/getImage/:image", ArticleController.getImage);
 router.get("/search/:search", ArticleController.search);
 
