@@ -5,7 +5,7 @@ export default function Sidebar(props) {
   return (
     <div>
       <aside id="sidebar">
-        {!blog && (
+        {blog && (
           <div id="nav-blog" className="sidebar-item">
             <h3>Puedes hacer esto</h3>
             <a href="#" className="btn btn-success">
