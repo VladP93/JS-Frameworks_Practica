@@ -8,7 +8,7 @@ export default function Sidebar(props) {
         {blog && (
           <div id="nav-blog" className="sidebar-item">
             <h3>Puedes hacer esto</h3>
-            <a href="#" className="btn btn-success">
+            <a href="/" className="btn btn-success">
               Crear artículo
             </a>
           </div>

@@ -26,28 +26,28 @@ export default function Formulario() {
         <section id="content">
           <h2 className="subheader">Formulario base</h2>
 
-          {formData.nombre != "" && (
+          {formData.nombre !== "" && (
             <div>
               <p>
                 Nombre: <strong>{formData.nombre}</strong>
               </p>
             </div>
           )}
-          {formData.apellidos != "" && (
+          {formData.apellidos !== "" && (
             <div>
               <p>
                 Apellidos: <strong>{formData.apellidos}</strong>
               </p>
             </div>
           )}
-          {formData.bio != "" && (
+          {formData.bio !== "" && (
             <div>
               <p>
                 Biografía: <strong>{formData.bio}</strong>
               </p>
             </div>
           )}
-          {formData.genero != "" && (
+          {formData.genero !== "" && (
             <div>
               <p>
                 Genero: <strong>{formData.genero}</strong>
