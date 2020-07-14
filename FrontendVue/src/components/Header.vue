@@ -4,28 +4,30 @@
       <!-- LOGO -->
       <div id="logo">
         <img src="../assets/logo.png" class="app-logo" alt="Logotipo" />
-        <span id="brand">
-          <strong>Curso</strong>Vue
-        </span>
+        <span id="brand"> <strong>Curso</strong>Vue </span>
       </div>
 
       <!-- MENU -->
       <nav id="menu">
         <ul>
           <li>
-            <a href="index.html">Inicio</a>
+            <router-link to="/home" active-class="active">Inicio</router-link>
           </li>
           <li>
-            <a href="blog.html">Blog</a>
+            <router-link to="/blog" active-class="active">Blog</router-link>
           </li>
           <li>
-            <a href="formulario.html">Formulario</a>
+            <router-link to="/formulario" active-class="active"
+              >Formulario</router-link
+            >
           </li>
           <li>
-            <a href="#">Pagina 1</a>
+            <router-link to="/pagina" active-class="active">Pagina</router-link>
           </li>
           <li>
-            <a href="#">Pagina 2</a>
+            <router-link to="/peliculas" active-class="active"
+              >Peliculas</router-link
+            >
           </li>
         </ul>
       </nav>
@@ -38,9 +40,8 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
 };
 </script>
 
-<style>
-</style>
+<style></style>

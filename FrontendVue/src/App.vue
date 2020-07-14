@@ -3,7 +3,7 @@
     <Header />
     <Slider />
     <div class="center">
-      <Home />
+      <router-view></router-view>
       <Sidebar />
     </div>
     <div class="clearfix"></div>
@@ -15,7 +15,6 @@
 import Header from "./components/Header.vue";
 import Slider from "./components/Slider.vue";
 import Sidebar from "./components/Sidebar.vue";
-import Home from "./components/Home.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
@@ -24,9 +23,8 @@ export default {
     Header,
     Slider,
     Sidebar,
-    Home,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 

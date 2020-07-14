@@ -1,15 +1,14 @@
 <template>
   <div id="slider" class="slider-big">
     <h1>Maquetación web para VueJS</h1>
-    <a href="#" class="btn-white">Ir al blog</a>
+    <router-link to="/blog" class="btn-white">Ir al Blog</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Slider"
+  name: "Slider",
 };
 </script>
 
-<style>
-</style>
+<style></style>
