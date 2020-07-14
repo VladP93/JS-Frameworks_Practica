@@ -1,5 +1,5 @@
 <template>
-  <section id="content">
+  <section>
     <h2 class="subheader">Error 404</h2>
     <p>Página no encontrada</p>
   </section>

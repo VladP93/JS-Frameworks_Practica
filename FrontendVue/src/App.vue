@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Slider />
-    <div class="center">
-      <router-view></router-view>
-      <Sidebar />
-    </div>
+    <router-view></router-view>
     <div class="clearfix"></div>
     <Footer />
   </div>
@@ -13,16 +9,12 @@
 
 <script>
 import Header from "./components/Header.vue";
-import Slider from "./components/Slider.vue";
-import Sidebar from "./components/Sidebar.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     Header,
-    Slider,
-    Sidebar,
     Footer,
   },
 };
