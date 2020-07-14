@@ -1,9 +1,24 @@
 import React from "react";
 
-export default function Search() {
+import Slider from "../Slider";
+import Sidebar from "../Sidebar";
+import Articles from "../Articles";
+
+export default function Search(props) {
+  const busqueda = props.match.params.search;
   return (
     <div>
-      <h1>Search</h1>
+      <Slider
+        texto={"Búsqueda: " + busqueda}
+        size="slider-small"
+        showButton={false}
+      />
+      <div className="center">
+        <section id="content">
+          <Articles search={busqueda} />
+        </section>
+        <Sidebar blog={true} />
+      </div>
     </div>
   );
 }
