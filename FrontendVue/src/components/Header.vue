@@ -4,7 +4,7 @@
       <!-- LOGO -->
       <div id="logo">
         <img src="../assets/logo.png" class="app-logo" alt="Logotipo" />
-        <span id="brand"> <strong>Curso</strong>Vue </span>
+        <span id="brand"> <strong>FrontEnd</strong>Vue </span>
       </div>
 
       <!-- MENU -->

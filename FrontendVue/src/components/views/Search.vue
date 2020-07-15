@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Slider texto="Blog" size="" />
+    <Slider :texto="'Búsqueda: ' + searchString" size="" />
     <div class="center">
       <section id="content">
-        <h2 class="subheader">Blog</h2>
+        <h2 class="subheader">Articulos encontrados</h2>
         <div id="articles" v-if="articles">
           <Articles :articles="articles" />
         </div>
@@ -20,26 +20,27 @@ import Slider from "../Slider.vue";
 import Sidebar from "../Sidebar.vue";
 import Articles from "../Articles.vue";
 export default {
-  name: "Blog",
+  name: "Search",
   components: {
     Slider,
     Sidebar,
     Articles,
   },
   mounted() {
-    this.getArticles();
-    window.scroll(0, 0);
+    this.searchString = this.$route.params.search;
+    this.getArticles(this.searchString);
   },
   data() {
     return {
       url: Global.url,
       articles: [],
+      searchString: null,
     };
   },
   methods: {
-    getArticles() {
+    getArticles(searchString) {
       axios
-        .get(this.url + "articles")
+        .get(this.url + "search/" + searchString)
         .then((res) => {
           if (res.data.status == "success") {
             this.articles = res.data.articles;

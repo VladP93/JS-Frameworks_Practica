@@ -37,11 +37,16 @@ export default {
   },
   methods: {
     getLastArticles() {
-      axios.get(this.url + "articles/true").then((res) => {
-        if (res.data.status == "success") {
-          this.articles = res.data.articles;
-        }
-      });
+      axios
+        .get(this.url + "articles/true")
+        .then((res) => {
+          if (res.data.status == "success") {
+            this.articles = res.data.articles;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

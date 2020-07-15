@@ -1,5 +1,9 @@
 <template>
   <section>
+    <div v-if="!articles">
+      <h1 class="subheader" style="color: #09a330">Cargando...</h1>
+    </div>
+
     <div id="articlesList" v-if="articles && articles.length >= 1">
       <article
         class="article-item"
@@ -21,14 +25,17 @@
         </div>
         <h2>{{ article.title }}</h2>
         <span class="date">
-          {{ article.date }}
+          {{ article.date | moment("from", "now") }}
         </span>
-        <a href="#">Leer más</a>
+        <router-link :to="{ name: 'article', params: { id: article._id } }"
+          >Leer más</router-link
+        >
         <div class="clearfix"></div>
       </article>
     </div>
+
     <div v-else>
-      <h1 class="subheader" style="color: #09a330">Cargando...</h1>
+      <h2>No hay artículos encontrados</h2>
     </div>
   </section>
 </template>

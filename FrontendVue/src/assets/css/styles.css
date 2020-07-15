@@ -58,6 +58,8 @@ body {
   display: block;
   margin: 0px;
   float: left;
+  font-size: 22px;
+  margin-top: 5px;
 }
 
 #menu {
@@ -234,6 +236,24 @@ body {
   background: rgb(23, 150, 19);
 }
 
+.btn-warning {
+  display: block;
+  background: rgb(255, 217, 0);
+  color: white !important;
+  text-decoration: none;
+  float: left;
+  margin: 5px;
+}
+
+.btn-danger {
+  display: block;
+  background: rgb(201, 21, 21);
+  color: white !important;
+  text-decoration: none;
+  float: left;
+  margin: 5px;
+}
+
 .btn-success:hover {
   background: black;
 }
@@ -253,6 +273,7 @@ body {
 }
 
 input[type="text"],
+input[type="file"],
 textarea {
   width: 100%;
   min-height: 30px;

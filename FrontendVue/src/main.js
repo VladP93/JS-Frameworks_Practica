@@ -2,6 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
 import Vuelidate from "vuelidate";
+import VueMoment from "vue-moment";
+import moment from "moment";
+import "moment/locale/es";
 
 // Vistas del router
 import TestComponent from "./components/TestComponent.vue";
@@ -11,12 +14,21 @@ import Formulario from "./components/views/Formulario.vue";
 import Home from "./components/views/Home.vue";
 import Pagina from "./components/views/Pagina.vue";
 import Peliculas from "./components/views/Peliculas.vue";
+import Search from "./components/views/Search.vue";
+import Article from "./components/views/Article.vue";
+import CreateArticle from "./components/views/CreateArticle.vue";
+import EditArticle from "./components/views/EditArticle.vue";
 import Error from "./components/views/Error.vue";
+
+//Componentes
+import Redirect from "./components/Redirect.vue";
 
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
+
+Vue.use(VueMoment, { moment });
 
 const routes = [
   {
@@ -36,6 +48,29 @@ const routes = [
     component: Blog,
   },
   {
+    path: "/blog",
+    component: Blog,
+  },
+  {
+    path: "/articulo/:id",
+    name: "article",
+    component: Article,
+  },
+  {
+    path: "/nuevo",
+    name: "create",
+    component: CreateArticle,
+  },
+  {
+    path: "/editar/:id",
+    name: "edit",
+    component: EditArticle,
+  },
+  {
+    path: "/buscar/:search",
+    component: Search,
+  },
+  {
     path: "/formulario",
     component: Formulario,
   },
@@ -46,6 +81,10 @@ const routes = [
   {
     path: "/peliculas",
     component: Peliculas,
+  },
+  {
+    path: "/redirect/:search",
+    component: Redirect,
   },
   {
     path: "/",
