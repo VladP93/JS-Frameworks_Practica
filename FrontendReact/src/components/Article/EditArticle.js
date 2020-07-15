@@ -12,7 +12,6 @@ import noImage from "../../assets/images/no-imagen.jpg";
 export default function EditArticle(props) {
   const url = Global.url;
   const id = props.match.params.id;
-  const [article, setArticle] = useState({});
   const [redirect, setRedirect] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
@@ -84,7 +83,7 @@ export default function EditArticle(props) {
     axios.get(url + "article/" + id).then((res) => {
       setFormData(res.data.article);
     });
-  }, []);
+  }, [url, id]);
 
   if (redirect) {
     return <Redirect to="/blog" />;
